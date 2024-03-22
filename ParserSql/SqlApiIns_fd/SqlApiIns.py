@@ -12,7 +12,7 @@ class SqlApiIns:
 
     def establish_sql_connection(self):
         try:
-            self.con = sqlite3.connect("../ProcurementsDB/Procurements.db")
+            self.con = sqlite3.connect("./ProcurementsDB/Procurements.db")
             print("Connection is established: Database is created in memory")
         except Error:
             print(Error)

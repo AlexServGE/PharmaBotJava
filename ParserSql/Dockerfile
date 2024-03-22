@@ -1,7 +1,6 @@
 FROM python:3.9
-RUN mkdir ./ParserSql/
-COPY ./ ./ParserSql/
-RUN mkdir ./ProcurementsDB/
+COPY ./ParserSql/ ./ParserSql/
+RUN mkdir -p ./ParserSql/ProcurementsDB/
 RUN apt update && apt install sqlite3
 RUN apt install -y tzdata
 ENV TZ=Europe/Moscow

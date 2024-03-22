@@ -28,7 +28,7 @@ public class BotConfig {
 
   public static String getBotTokenFromFile() {
     String botToken = null;
-    Path botTokenPath = Paths.get("./src/main/resources/BotToken.txt");
+    Path botTokenPath = Paths.get("./BotToken.txt");
     try (InputStream is = Files.newInputStream(botTokenPath)) {
       BufferedInputStream bIs = new BufferedInputStream(is);
       botToken = new String(bIs.readAllBytes());

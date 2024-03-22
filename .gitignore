@@ -1,6 +1,11 @@
 __pycache__/ 
 venv/
 .idea/
-ProcurementsDB/Procurements.db
+
+ParserSql/ProcurementsDB/Procurements.db
+
+
+BotSqlJava/ProcurementsDB/Procurements.db
+BotSqlJava/BotToken.txt
 BotSqlJava/src/main/resources/BotToken.txt
 BotSqlJava/*.log
