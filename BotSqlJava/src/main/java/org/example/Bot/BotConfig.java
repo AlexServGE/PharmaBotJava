@@ -36,7 +36,8 @@ public class BotConfig {
         throw new RuntimeException();
       }
     } catch (IOException e) {
-      BotLogger.error(String.format("%s - Отсутствует файл BotToken.txt. Необходимо его создать и внести токен.", LOGTAG), e);
+      BotLogger.error(String.format("%s - Отсутствует файл BotToken.txt. " +
+              "Его необходимо создать в корневой папке проекта и внести токен.", LOGTAG), e);
     } catch (RuntimeException e) {
       BotLogger.error(String.format("%s - В файле BotToken.txt отсутствует токен. Необходимо внести токен.", LOGTAG), e);
     }

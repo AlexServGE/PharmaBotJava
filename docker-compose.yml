@@ -7,7 +7,7 @@ services:
       dockerfile: ./ParserSql/Dockerfile
     container_name: parser_container
     volumes:
-      - ./BotSqlJava/ProcurementsDB:/ParserSql/ProcurementsDB/
+      - ./ProcurementsDB:/ProcurementsDB/
     networks:
       supernetwork:
         ipv4_address: 172.20.0.5
@@ -18,7 +18,7 @@ services:
       dockerfile: ./BotSqlJava/Dockerfile
     container_name: bot_container
     volumes:
-      - ./BotSqlJava/ProcurementsDB:/BotSqlJava/ProcurementsDB
+      - ./ProcurementsDB:/ProcurementsDB
     networks:
       supernetwork:
         ipv4_address: 172.20.0.6

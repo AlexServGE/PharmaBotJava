@@ -4,6 +4,7 @@ venv/
 
 ParserSql/ProcurementsDB/Procurements.db
 
+ProcurementsDB/Procurements.db
 
 BotSqlJava/ProcurementsDB/Procurements.db
 BotSqlJava/BotToken.txt
