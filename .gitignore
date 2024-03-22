@@ -2,5 +2,5 @@ __pycache__/
 venv/
 .idea/
 ProcurementsDB/Procurements.db
-BotSql/Token.txt
+BotSqlJava/src/main/resources/BotToken.txt
 BotSqlJava/*.log
