@@ -1,5 +1,6 @@
 FROM eclipse-temurin
 COPY ./BotSqlJava/target/BotSqlJava-1.0-SNAPSHOT-jar-with-dependencies.jar ./BotSqlJava-1.0-SNAPSHOT-jar-with-dependencies.jar
+COPY ./BotSqlJava/BotToken.txt ./
 RUN mkdir ./ProcurementsDB/
 RUN apt update
 RUN apt install sqlite3 -y
