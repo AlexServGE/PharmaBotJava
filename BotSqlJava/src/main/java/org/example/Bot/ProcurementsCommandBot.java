@@ -2,7 +2,7 @@ package org.example.Bot;
 
 import org.example.Bot.Commands.CallbackHandlers.*;
 import org.example.Bot.Commands.HelpCommand;
-import org.example.Bot.Commands.ShowTendersSelMedicine;
+import org.example.Bot.Commands.ShowTendersSelMedicineCommand;
 import org.example.Bot.Commands.StartCommand;
 import org.example.Bot.Emoji.Emoji;
 import org.example.Bot.Logging.BotLogger;
@@ -23,9 +23,7 @@ public class ProcurementsCommandBot extends TelegramLongPollingCommandBot {
     super(botToken);
     register(new StartCommand(this));
     register(new HelpCommand(this));
-    register(new ShowTendersSelMedicine());
-
-//        register(new ShowTendersCommand());
+    register(new ShowTendersSelMedicineCommand());
 
     registerDefaultAction((absSender, message) -> {
       SendMessage commandUnknownMessage = new SendMessage();

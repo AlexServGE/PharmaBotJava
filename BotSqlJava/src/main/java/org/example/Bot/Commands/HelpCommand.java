@@ -25,10 +25,10 @@ public class HelpCommand extends BotCommand {
     public void execute(AbsSender absSender, User user, Chat chat, String[] strings) {
 
         StringBuilder helpMessageBuilder = new StringBuilder("<b>Help</b>\n");
-        helpMessageBuilder.append("Список зарегистрированных команд бота:\n\n");
+        helpMessageBuilder.append("Список зарегистрированных команд бота:\n");
 
         for (IBotCommand botCommand : commandRegistry.getRegisteredCommands()) {
-            helpMessageBuilder.append(botCommand.toString()).append("\n\n");
+            helpMessageBuilder.append(botCommand.toString()).append("\n");
         }
 
         SendMessage helpMessage = new SendMessage();

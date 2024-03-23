@@ -59,7 +59,7 @@ public enum CommandsStructure {
   /**
    * Можно упростить метод getfilter или вообще без него обойтись.
    * enum экземпляры SHOWTENDERS_CONTRAST_Central("211") сделать с фильтрами SHOWTENDERS_CONTRAST_Central("211","фильтр1","фильтр2")
-   * фильтр1, фильтр2 можно предтавить как enum более высокого порядка.
+   * фильтр1, фильтр2 можно представить как enum более высокого порядка.
    * В таком случае необходимо будет внести изменения в switch ProcurementCommandBot
    * А также ShowTendersSelMedicineSelRegionOuput getfilters переделать/заменить на другой метод
    * Можно сделать метод getFilter через relfection API для автоматизации включения и удаления новых фильтров

@@ -14,11 +14,11 @@ import java.util.*;
 
 import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
-public class ShowTendersSelMedicine extends BotCommand {
+public class ShowTendersSelMedicineCommand extends BotCommand {
 
     public static final String LOGTAG = "SHOWTENDERSCOMMAND";
 
-    public ShowTendersSelMedicine() {
+    public ShowTendersSelMedicineCommand() {
         super("showTenders", "Получить информацию о закупках за последние два дня.");
     }
 

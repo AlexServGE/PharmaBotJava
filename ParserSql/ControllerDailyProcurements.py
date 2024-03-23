@@ -14,7 +14,7 @@ class ControllerDailyProcurements:
 
     def __init__(self, inn_medicine_list_filter, pharma_category_title, federal_region_dict):
         self.procurements_db = SqlApiIns()
-        self.SLEEP_SECONDS = 0  # 120
+        self.SLEEP_SECONDS = 120  # 120
         self.SLEEP_EXTRA_SECONDS = 10  # 20
         self.pharmbot_ver001_INN_list_session(inn_medicine_list_filter, pharma_category_title, federal_region_dict)
         self.procurements_db.con.close()
@@ -51,10 +51,10 @@ class ControllerDailyProcurements:
             search_engine_page_inn = SearchEnginePage(raw_search_engine_page.soup_content)
             # сливаем все search_engine_page_inn в один словарь, а затем исполняем pharmbot_ver001_INN_session без fake
             search_engine_page_inn_total_dict.update(search_engine_page_inn.search_results_dict)
-        self.pharmbot_ver001_INN_session(search_engine_page_inn_total_dict,pharma_category_title, federal_region_dict)
+        self.pharmbot_ver001_INN_session(search_engine_page_inn_total_dict, pharma_category_title, federal_region_dict)
 
     def pharmbot_ver001_INN_session(self,
-                                    search_engine_page_inn_total_dict,pharma_category_title, federal_region_dict):
+                                    search_engine_page_inn_total_dict, pharma_category_title, federal_region_dict):
         """Создает list c tuples, который затем передает в базу данных"""
         process_workload = search_engine_page_inn_total_dict
 
