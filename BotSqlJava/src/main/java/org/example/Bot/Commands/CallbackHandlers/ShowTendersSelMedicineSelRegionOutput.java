@@ -63,6 +63,7 @@ public class ShowTendersSelMedicineSelRegionOutput {
       String todayOffset1 = todayDateAndOffsets.getTodayDateOffset1(); //yesterday
       String todayOffset2 = todayDateAndOffsets.getTodayDateOffset2(); //twiceyesterday
       String todayOffset3 = todayDateAndOffsets.getTodayDateOffset3(); //friday
+      String todayOffset4 = todayDateAndOffsets.getTodayDateOffset4(); //friday
       int todayWeekDay = todayDateAndOffsets.getDayOfWeek();
 
       List<String> userFilters = com.getFilter();
@@ -71,11 +72,11 @@ public class ShowTendersSelMedicineSelRegionOutput {
       System.out.println(userFilters);
 
       if (todayWeekDay == DayInWeek.MONDAY.getNumber()) {
-        tenders = ormDbManager.selectAllFromDBProcurements(curSession, category, federalRegion, todayOffset3, todayOffset1);
+        tenders = ormDbManager.selectAllFromDBProcurements(curSession, category, federalRegion, todayOffset4, todayOffset1);
       } else if (todayWeekDay == DayInWeek.TUESDAY.getNumber()) {
-        tenders = ormDbManager.selectAllFromDBProcurements(curSession, category, federalRegion, todayOffset1, todayOffset1);
-      } else {
         tenders = ormDbManager.selectAllFromDBProcurements(curSession, category, federalRegion, todayOffset2, todayOffset1);
+      } else {
+        tenders = ormDbManager.selectAllFromDBProcurements(curSession, category, federalRegion, todayOffset3, todayOffset1);
       }
     }
     return tenders;

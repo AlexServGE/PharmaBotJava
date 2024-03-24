@@ -13,7 +13,7 @@ class ControllerDailyProcurements:
 
     def __init__(self, inn_medicine_list_filter, pharma_category_title, federal_regions_dict):
         self.procurements_db = SqlApiIns()
-        self.SLEEP_SECONDS = 0  # 120
+        self.SLEEP_SECONDS = 10  # 120
         self.SLEEP_EXTRA_SECONDS = 10  # 20
         self.pharmabot_INN_GET_LIST_crawling_session(inn_medicine_list_filter, pharma_category_title, federal_regions_dict)
         self.procurements_db.con.close()
