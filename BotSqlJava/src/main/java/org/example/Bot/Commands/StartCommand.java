@@ -1,5 +1,6 @@
 package org.example.Bot.Commands;
 
+import org.example.Bot.Emoji.Emoji;
 import org.example.Bot.Logging.BotLogger;
 import org.telegram.telegrambots.extensions.bots.commandbot.commands.BotCommand;
 import org.telegram.telegrambots.extensions.bots.commandbot.commands.IBotCommand;
@@ -26,15 +27,12 @@ public class StartCommand extends BotCommand {
     @Override
     public void execute(AbsSender absSender, User user, Chat chat, String[] strings) {
         StringBuilder messageBuilder = new StringBuilder();
-        messageBuilder.append("Добрый день, ");
-        messageBuilder.append(user.getFirstName());
-        messageBuilder.append("! Вас приветствует PharmaBot.");
-        messageBuilder.append("Я здесь, чтобы помочь быть в курсе закупок лекарственных препаратов 44-ФЗ.");
-        messageBuilder.append("Команда /cancel, чтобы прекратить разговор.\n");
-        messageBuilder.append("These are the registered commands for this Bot:\n\n");
+        messageBuilder.append("Добрый день, "+ user.getFirstName() + "!\n");
+        messageBuilder.append("Вас приветствует PharmaBot. " + Emoji.INFORMATION_SOURCE + "\n");
+        messageBuilder.append("Я здесь, чтобы помочь быть в курсе закупок лекарственных препаратов 44-ФЗ."+ Emoji.ROCKET+"\n");
 
         for (IBotCommand botCommand : commandRegistry.getRegisteredCommands()) {
-            messageBuilder.append(botCommand.toString()).append("\n\n");
+            messageBuilder.append(botCommand.toString()).append("\n");
         }
 
         SendMessage answer = new SendMessage();
