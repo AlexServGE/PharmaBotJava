@@ -66,7 +66,6 @@ public class ShowTendersSelMedicineCommand extends BotCommand {
             i++;
         }
 
-        // Add it to the message
         markupInline.setKeyboard(rowsInline);
         return markupInline;
     }

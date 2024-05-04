@@ -18,7 +18,6 @@ public class ProcurementsCommandBot extends TelegramLongPollingCommandBot {
   public static final String LOGTAG = "COMMANDSHANDLER";
   public static CommandsStructure com;
 
-  //Commands processed
   public ProcurementsCommandBot(String botToken) {
     super(botToken);
     register(new StartCommand(this));
@@ -37,7 +36,6 @@ public class ProcurementsCommandBot extends TelegramLongPollingCommandBot {
     });
   }
 
-  //Messages processed
   @Override
   public void processNonCommandUpdate(Update update) {
     if (update.hasCallbackQuery()) {
@@ -47,31 +45,9 @@ public class ProcurementsCommandBot extends TelegramLongPollingCommandBot {
     }
   }
 
-  //Raw messages processed
-  private void handleMessage(Message message, Update update) {
-    //Получили текст (а не картинку итп)
-//        if (update.getMessage().hasText()) {
-//            Message userMessage = update.getMessage();
-//            switch (userMessage) {
-//                case :
-//            }
-//
-//            SendMessage botMessage = new SendMessage();
-//            botMessage.setChatId(userMessage.getChatId());
-//            botMessage.setText("Hey heres your message:\n" + userMessage.getText());
-//
-//            try {
-//                execute(echoMessage);
-//            } catch (TelegramApiException e) {
-//                BotLogger.error(LOGTAG, e);
-//            }
-//        }
+  private void handleMessage(Message message, Update update) {}
 
-  }
-
-  //Callbackdata processed
   private void handleCallback(CallbackQuery callbackQuery) {
-    // Set variables
 
     String callData = callbackQuery.getData();
     long message_id = callbackQuery.getMessage().getMessageId();

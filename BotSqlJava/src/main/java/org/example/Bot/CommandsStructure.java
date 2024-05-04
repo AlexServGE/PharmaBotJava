@@ -3,13 +3,7 @@ package org.example.Bot;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-
-/**
- * Тэги соответствуют сценариям.
- * Сценарии состоят из номеров кнопок.
- */
 
 public enum CommandsStructure {
   HELPCOMMAND("1"),
@@ -56,15 +50,6 @@ public enum CommandsStructure {
     return tag;
   }
 
-  /**
-   * Можно упростить метод getfilter или вообще без него обойтись.
-   * enum экземпляры SHOWTENDERS_CONTRAST_Central("211") сделать с фильтрами SHOWTENDERS_CONTRAST_Central("211","фильтр1","фильтр2")
-   * фильтр1, фильтр2 можно представить как enum более высокого порядка.
-   * В таком случае необходимо будет внести изменения в switch ProcurementCommandBot
-   * А также ShowTendersSelMedicineSelRegionOuput getfilters переделать/заменить на другой метод
-   * Можно сделать метод getFilter через relfection API для автоматизации включения и удаления новых фильтров
-   * @return
-   */
   public List<String> getFilter() {
     List<String> userFilters = new ArrayList<>();
     char[] charArray = this.tag.toCharArray();

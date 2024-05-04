@@ -17,7 +17,6 @@ public class ShowTendersSelMedicineSelRegionOutput {
 
   public static final String LOGTAG = "ShowTendersSelMedicineSelRegionOutput";
   public static CommandsStructure com;
-  public static String userFilters;
 
   public static void showTendersSelMedicineSelRegionOutput(String callData, long message_id, long chat_id, ProcurementsCommandBot bot) {
     try {
@@ -50,9 +49,6 @@ public class ShowTendersSelMedicineSelRegionOutput {
         BotLogger.error(LOGTAG, e);
       }
     }
-
-
-
   }
 
   public static List<Tender> selectFromDb() {
@@ -60,16 +56,15 @@ public class ShowTendersSelMedicineSelRegionOutput {
     List<Tender> tenders;
     try (Session curSession = ormDbManager.getSession()) {
       TodayDateAndOffsets todayDateAndOffsets = new TodayDateAndOffsets();
-      String todayOffset1 = todayDateAndOffsets.getTodayDateOffset1(); //yesterday
-      String todayOffset2 = todayDateAndOffsets.getTodayDateOffset2(); //twiceyesterday
-      String todayOffset3 = todayDateAndOffsets.getTodayDateOffset3(); //friday
-      String todayOffset4 = todayDateAndOffsets.getTodayDateOffset4(); //friday
+      String todayOffset1 = todayDateAndOffsets.getTodayDateOffset1();
+      String todayOffset2 = todayDateAndOffsets.getTodayDateOffset2();
+      String todayOffset3 = todayDateAndOffsets.getTodayDateOffset3();
+      String todayOffset4 = todayDateAndOffsets.getTodayDateOffset4();
       int todayWeekDay = todayDateAndOffsets.getDayOfWeek();
 
       List<String> userFilters = com.getFilter();
       String category = userFilters.get(0);
       String federalRegion = userFilters.get(1);
-      System.out.println(userFilters);
 
       if (todayWeekDay == DayInWeek.MONDAY.getNumber()) {
         tenders = ormDbManager.selectAllFromDBProcurements(curSession, category, federalRegion, todayOffset4, todayOffset1);

@@ -63,7 +63,6 @@ public class ShowTendersSelMedicineSelRegion {
             i++;
         }
 
-        // Add it to the message
         markupInline.setKeyboard(rowsInline);
         return markupInline;
     }

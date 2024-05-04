@@ -1,7 +1,6 @@
 package org.example.Bot.Emoji;
 
 public enum Emoji {
-    // Emoticones group
     GRINNING_FACE_WITH_SMILING_EYES('\uD83D', '\uDE01'),
     FACE_WITH_TEARS_OF_JOY('\uD83D', '\uDE02'),
     SMILING_FACE_WITH_OPEN_MOUTH('\uD83D', '\uDE03'),

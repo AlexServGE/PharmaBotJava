@@ -1,8 +1,5 @@
 package org.example.Dates;
 
-import lombok.Getter;
-
-
 public enum DayInWeek {
     SUNDAY(1),
     MONDAY(2),
