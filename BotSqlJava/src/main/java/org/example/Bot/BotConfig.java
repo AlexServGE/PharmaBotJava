@@ -19,7 +19,7 @@ public class BotConfig {
     Path botTokenPath = Paths.get("./BotToken.txt");
     try (InputStream is = Files.newInputStream(botTokenPath)) {
       BufferedInputStream bIs = new BufferedInputStream(is);
-      botToken = new String(bIs.readAllBytes());
+      botToken = new String(bIs.readAllBytes()).trim();
       if (botToken.isEmpty()) {
         throw new RuntimeException();
       }
