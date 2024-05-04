@@ -55,7 +55,7 @@
         bot_container     | SLF4J(W): Defaulting to no-operation (NOP) logger implementation
         bot_container     | SLF4J(W): See https://www.slf4j.org/codes.html#noProviders for further details.
 
-* Необходимо дождаться пока <b>Парсер</b> не вернёт сообщение в командной строке: 
+* Необходимо дождаться пока <b>Парсер</b> не вернёт сообщение в командной строке (ожидание в среднем составляет от 8 до 15 минут [время ожидания неограничено, так как зависит от количества данных для парсинга]): 
 
         parser_container  | Начало сбора - ####-##-## ##:##:##.######
         parser_container  | Connection is established: Database is created in memory
