@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
 @Slf4j
@@ -21,5 +22,13 @@ public class ProcurementService {
             throw new NoSuchElementException("Не удалось найти книгу с id " + id);
         }
         return procurementRepository.findById(id);
+    }
+
+    public ArrayList<Procurement> getAllProcurements() {
+        if (procurementRepository.findAll() == null) {
+            log.info("Не удалось найти все закупки");
+            throw new NoSuchElementException("Не удалось найти все закупки");
+        }
+        return procurementRepository.findAll();
     }
 }
