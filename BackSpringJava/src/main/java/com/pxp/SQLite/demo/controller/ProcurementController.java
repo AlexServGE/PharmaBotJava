@@ -10,8 +10,12 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
+
+import java.util.List;
+
 import java.util.NoSuchElementException;
+
+
 
 @Slf4j
 @RestController
@@ -21,21 +25,19 @@ public class ProcurementController {
 
   private final ProcurementService service;
 
-
-  @GetMapping(path ="/", produces = "application/json")
-  public ResponseEntity<ArrayList<Procurement>> getAllProcurements() {
+//  @CrossOrigin(origins ="http://127.0.0.1:5000",maxAge = 3600)
+  @GetMapping(path = "/", produces = "application/json")
+  public ResponseEntity<List<Procurement>> getAllProcurements() {
     log.info("Поступил запрос на получение информации обо всех закупках за последние два дня");
 
     try {
-      ArrayList<Procurement> responce = service.getAllProcurements();
-      return new ResponseEntity<>(responce, HttpStatus.OK);
-//      return ResponseEntity.ok().body(service.getAllProcurements());
+      return ResponseEntity.ok().body(service.getAllProcurements());
     } catch (NoSuchElementException e) {
       return ResponseEntity.notFound().build();
     }
   }
-
-  @GetMapping(path ="/{id}", produces = "application/json")
+//  @CrossOrigin(origins ="http://127.0.0.1:5500",maxAge = 3600)
+  @GetMapping(path = "/{id}", produces = "application/json")
   public ResponseEntity<Procurement> getProcurement(@PathVariable int id) {
     log.info("Поступил запрос на получение информации о закупке: procurementId={}"
             , id);
@@ -46,4 +48,13 @@ public class ProcurementController {
       return ResponseEntity.notFound().build();
     }
   }
+
+  @GetMapping(path = "/test")
+//  @CrossOrigin(origins ="http://127.0.0.1:5500",maxAge = 3600)
+  public ResponseEntity<String> getTestString() {
+
+    return new ResponseEntity<>("test string to be sent", HttpStatus.OK);
+
+  }
+
 }
