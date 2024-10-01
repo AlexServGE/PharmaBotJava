@@ -10,6 +10,8 @@ import java.util.List;
 @Repository
 public interface ProcurementRepository extends JpaRepository<Procurement, Integer> {
 
-    Procurement findById(int id);
-    List<Procurement> findAll();
+  List<Procurement> findProcurementsByTenderDateBetween(String tenderDate, String tenderDate2);
+
+  List<Procurement> findProcurementsByMedicineCategoryAndTenderFederalRegionAndTenderDateBetween(String medicineCategory, String tenderFederalRegion, String tenderDate, String tenderDate2);
+
 }

@@ -13,13 +13,4 @@ public class SpringBootAndSqLiteApplication {
 		SpringApplication.run(SpringBootAndSqLiteApplication.class, args);
 	}
 
-//	@Bean
-//	public WebMvcConfigurer corsConfigurer() {
-//		return new WebMvcConfigurer() {
-//			@Override
-//			public void addCorsMappings(CorsRegistry registry) {
-//				registry.addMapping("/procurement/test").allowedOrigins("http://localhost:5500");
-//			}
-//		};
-//	}
 }

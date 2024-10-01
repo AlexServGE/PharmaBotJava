@@ -24,24 +24,6 @@ a {
     gap: 30px;
 }
 
-.check_button{
-    font-family: Gilroy-Bold;
-    font-size: 13px;
-    font-weight: 400;
-    text-align: center;
-    background-color: rgb(242, 88, 34);
-    color: rgb(255, 255, 255);
-    border-radius: 15px;
-    padding: 1rem 2rem;
-    text-decoration: none;
-    border: 2px solid transparent;
-}
-
-.check_button:hover{
-    color:rgb(242, 88, 34);
-    background-color: #fff;
-    border: 2px solid rgb(242, 88, 34);
-}
 
 .header{
     padding-top:100px;
@@ -109,6 +91,10 @@ a {
     height: 100px;
 }
 
+.top__federal_region{
+    margin-bottom: 22px;
+}
+
 
 .top__block__title{
     margin-bottom: 22px;
@@ -136,4 +122,29 @@ a {
     margin-bottom:25px;
     width: 100px;
     height: 100px;
+}
+
+
+.top__search{
+    display: flex;
+    justify-content: center;
+}
+
+.button_search{
+    font-family: Gilroy-Bold;
+    font-size: 20px;
+    font-weight: 400;
+    text-align: center;
+    background-color: rgb(242, 88, 34);
+    color: rgb(255, 255, 255);
+    border-radius: 15px;
+    padding: 1rem 20rem;
+    text-decoration: none;
+    border: 2px solid transparent;
+}
+
+.button_search:hover{
+    color:rgb(242, 88, 34);
+    background-color: #fff;
+    border: 2px solid rgb(242, 88, 34);
 }

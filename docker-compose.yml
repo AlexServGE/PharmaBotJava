@@ -25,6 +25,21 @@ services:
     depends_on:
       - parser
 
+  backspring:
+    build:
+      context: .
+      dockerfile: ./BackSpringJava/Dockerfile
+    container_name: backspring_container
+    volumes:
+      - ./ProcurementsDB:/ProcurementsDB
+    ports:
+      - 8080:8080
+    networks:
+      supernetwork:
+        ipv4_address: 172.20.0.7
+    depends_on:
+      - parser
+
 
 networks:
   supernetwork:
@@ -35,3 +50,4 @@ networks:
 volumes:
   parser:
   bot:
+  backspring:

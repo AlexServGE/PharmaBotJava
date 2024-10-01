@@ -16,7 +16,6 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 
-
 @Slf4j
 @RestController
 @RequestMapping("procurement")
@@ -25,36 +24,28 @@ public class ProcurementController {
 
   private final ProcurementService service;
 
+  @GetMapping(path = "/{date1}-{date2}", produces = "application/json")
 //  @CrossOrigin(origins ="http://127.0.0.1:5000",maxAge = 3600)
-  @GetMapping(path = "/", produces = "application/json")
-  public ResponseEntity<List<Procurement>> getAllProcurements() {
-    log.info("Поступил запрос на получение информации обо всех закупках за последние два дня");
+  public ResponseEntity<List<Procurement>> getProcurementsByTenderDateBetween(@PathVariable String date1, @PathVariable String date2) {
+    log.info("Поступил запрос на получение информации закупках на дату c - {}, по - {}", date1, date2);
 
     try {
-      return ResponseEntity.ok().body(service.getAllProcurements());
-    } catch (NoSuchElementException e) {
-      return ResponseEntity.notFound().build();
-    }
-  }
-//  @CrossOrigin(origins ="http://127.0.0.1:5500",maxAge = 3600)
-  @GetMapping(path = "/{id}", produces = "application/json")
-  public ResponseEntity<Procurement> getProcurement(@PathVariable int id) {
-    log.info("Поступил запрос на получение информации о закупке: procurementId={}"
-            , id);
-
-    try {
-      return ResponseEntity.ok().body(service.getProcurement(id));
+      return ResponseEntity.ok().body(service.getProcurementsByTenderDateBetween(date1, date2));
     } catch (NoSuchElementException e) {
       return ResponseEntity.notFound().build();
     }
   }
 
-  @GetMapping(path = "/test")
-//  @CrossOrigin(origins ="http://127.0.0.1:5500",maxAge = 3600)
-  public ResponseEntity<String> getTestString() {
+  @GetMapping(path = "/{category}/{federalRegion}/{date1}-{date2}", produces = "application/json")
+  //  @CrossOrigin(origins ="http://127.0.0.1:5000",maxAge = 3600)
+  public ResponseEntity<List<Procurement>> getProcurementsByMedicineCategoryAndTenderFederalRegionAndTenderDateBetween(@PathVariable String category, @PathVariable String federalRegion, @PathVariable String date1, @PathVariable String date2) {
+    log.info("Поступил запрос на получение информации закупках в категории - {}, в регионе - {}, на дату c - {}, по - {}", category, federalRegion, date1, date2);
 
-    return new ResponseEntity<>("test string to be sent", HttpStatus.OK);
-
+    try {
+      return ResponseEntity.ok().body(service.getProcurementsByMedicineCategoryAndTenderFederalRegionAndTenderDateBetween(category, federalRegion, date1, date2));
+    } catch (NoSuchElementException e) {
+      return ResponseEntity.notFound().build();
+    }
   }
 
 }
