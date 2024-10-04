@@ -1,3 +1,19 @@
 .radio_visibility_hidden{
     visibility: hidden;
 }
+
+.category__block__border{
+    outline: 2px solid rgb(242, 88, 34);
+}
+
+.category__block:hover{
+    outline: 2px solid rgb(242, 88, 34);
+}
+
+.federal_region__block__border{
+    outline: 2px solid rgb(242, 88, 34);
+}
+
+.federal_region__block:hover{
+    outline: 2px solid rgb(242, 88, 34);
+}

@@ -12,6 +12,12 @@ a {
     margin: 0 auto;
 }
 
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+    
 
 .header{
     padding: 50px 0px;
@@ -35,26 +41,25 @@ a {
     color: rgb(102, 102, 102);
 }
 
+.top{
+    margin-top: 25px;
+    margin-bottom: 50px;
+}
+
 .flex__top{ 
     display: flex;
     justify-content: space-between;
-    gap: 10px;
-    margin-bottom: 50px;
 }
 
 .category__block{
     background-color: rgb(255, 255, 255); 
-    padding: 20px;
     text-align: center;
+    margin-bottom: 10px;
 }
 
 .category__block__image{
-    width: 100px;
-    height: 100px;
-}
-
-.top{
-    margin-bottom: 50px;
+    width: 50px;
+    height: 50px;
 }
 
 .top__federal_region{
@@ -75,20 +80,20 @@ a {
     display: grid;
     justify-content: space-between;
     grid-template-columns: repeat(4, auto);
-    gap: 10px;
+    gap: 5px;
     grid-template-rows: repeat(2, auto);
 }
 
 .federal_region__block{
     background-color: rgb(255, 255, 255); 
-    padding: 30px;
+    padding: 10px;
     text-align: center;
 }
 
 .federal_region__icon{
-    margin-bottom:25px;
-    width: 100px;
-    height: 100px;
+    margin-bottom: 10px;
+    width: 50px;
+    height: 50px;
 }
 
 .check_button{
@@ -97,23 +102,7 @@ a {
     pointer-events: none;
 }
 
-.category__block__border{
-    outline: 2px solid rgb(242, 88, 34);
-}
-
-.category__block:hover{
-    outline: 2px solid rgb(242, 88, 34);
-}
-
-.federal_region__block__border{
-    outline: 2px solid rgb(242, 88, 34);
-}
-
-.federal_region__block:hover{
-    outline: 2px solid rgb(242, 88, 34);
-}
-
-.top__search{
+.search__block{
     display: flex;
     justify-content: center;
 }
@@ -140,6 +129,7 @@ a {
 .main{
     padding: 20px 0px 50px 0px;
     background-color: rgb(250, 250, 250);
+    flex: 1;
 }
 
 .main__text__title{
@@ -151,7 +141,7 @@ a {
     color: rgb(0, 0, 0);
 }
 
-.procurements_box{
+.procurements__block{
     display: flex;
     flex-direction: column;
     align-items: center;
