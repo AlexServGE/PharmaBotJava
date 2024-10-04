@@ -10,7 +10,7 @@ services:
       - ./ProcurementsDB:/ProcurementsDB/
     networks:
       supernetwork:
-        ipv4_address: 172.20.0.5
+        ipv4_address: 171.20.0.5
 
   bot:
     build:
@@ -21,7 +21,7 @@ services:
       - ./ProcurementsDB:/ProcurementsDB
     networks:
       supernetwork:
-        ipv4_address: 172.20.0.6
+        ipv4_address: 171.20.0.6
     depends_on:
       - parser
 
@@ -36,7 +36,7 @@ services:
       - 8080:8080
     networks:
       supernetwork:
-        ipv4_address: 172.20.0.7
+        ipv4_address: 171.20.0.7
     depends_on:
       - parser
 
@@ -45,7 +45,7 @@ networks:
   supernetwork:
     ipam:
       config:
-        - subnet: 172.20.0.0/24
+        - subnet: 171.20.0.0/24
 
 volumes:
   parser:
