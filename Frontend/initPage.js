@@ -21,7 +21,7 @@ async function getProcurements(dateToRequestFrom, dateToRequestTo) {
     const result = await response.json();
     return result;
 }
-const procurementsBoxElement = document.querySelector('.procurements_box');
+const procurementsBoxElement = document.querySelector('.procurements__block');
 const procurementsBoxElementVariable = document.createElement('div');
 procurementsBoxElement.insertAdjacentElement("beforeend", procurementsBoxElementVariable);
 
