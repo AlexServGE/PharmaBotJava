@@ -15,22 +15,6 @@ public class ProcurementService {
 
   private final ProcurementRepository procurementRepository;
 
-//    public Procurement getProcurement(int id) {
-//        if (procurementRepository.findById(id) == null) {
-//            log.info("Не удалось найти книгу с id " + id);
-//            throw new NoSuchElementException("Не удалось найти книгу с id " + id);
-//        }
-//        return procurementRepository.findById(id);
-//    }
-//
-//    public List<Procurement> getAllProcurements() {
-//        if (procurementRepository.findAll() == null) {
-//            log.info("Не удалось найти все закупки");
-//            throw new NoSuchElementException("Не удалось найти все закупки");
-//        }
-//        return procurementRepository.findAll();
-//    }
-
   public List<Procurement> getProcurementsByTenderDateBetween(String tenderDate1, String tenderDate2) {
     if (procurementRepository.findProcurementsByTenderDateBetween(tenderDate1, tenderDate2) == null) {
       log.info("Не удалось найти все закупки");
