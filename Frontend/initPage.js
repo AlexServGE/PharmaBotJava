@@ -27,13 +27,12 @@ procurementsBoxElement.insertAdjacentElement("beforeend", procurementsBoxElement
 
 document.addEventListener('DOMContentLoaded', async () => {
     const procurements = await getProcurements(dateToRequestFrom, dateToRequestTo);
-    console.log(procurements);
     procurements.forEach(procurement => {
         const procurementElement = document.createElement('div');
         procurementElement.classList.add("procurements_box__procurement");
         procurementsBoxElementVariable.insertAdjacentElement("beforeend", procurementElement);
         for (let key in procurement) {
-            if (key === "id" || key === "tenderLink"|| key === "medicineCategory") {
+            if (key === "id" || key === "tenderLink" || key === "medicineCategory") {
                 continue;
             }
             if (key === "tenderId") {

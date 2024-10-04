@@ -74,7 +74,6 @@ searchBtnEl.addEventListener('click', async () => {
         categoryBlockEls.forEach(curCategoryBlock => {
             curCategoryBlock.classList.remove('radio_visibility_hidden');
             curCategoryBlock.classList.remove('category__block__border');
-
             radioButtonCategoryElSelected = curCategoryBlock.querySelector(".category_button");
             radioButtonCategoryElSelected.checked = false;
         });
